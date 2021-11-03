@@ -1,0 +1,9 @@
+<project default="main" name="Activity 45" basedir="."> 
+
+    <target name="main">
+		<input message="Input name of Java file to be compiled" 
+            addproperty="file-name" />
+		<echo>File to be compiled: ${file-name}</echo>
+    </target>
+
+</project>

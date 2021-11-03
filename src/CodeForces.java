@@ -1,9 +1,16 @@
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-    
+
+/**
+ * This class contains the compiled CodeForces solutions
+ * team ABCD has created for CS311
+ */
 public class CodeForces {
 
+    /**
+     * Main method of the class
+     */
     public static void main(String args[]) {
         System.out.println("CodeForces.java ");
     }

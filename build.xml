@@ -16,10 +16,14 @@
       classpathref="lib"
     /> -->
 
-    <jar destfile="lib/${file-name}"
+    <jar destfile="lib/jarfile"
       basedir="build"
       includes="build/${file-name}.class"
     />
+
+    <javadoc sourcepath="src" 
+      destdir="doc" 
+      sourcefiles="src/${file-name}"/>
 
   </target>
 

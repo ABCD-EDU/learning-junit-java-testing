@@ -3,6 +3,11 @@ import java.util.List;
 import java.util.Set;
     
 public class CodeForces {
+
+    public static void main(String args[]) {
+        System.out.println("CodeForces.java executed");
+    }
+
     int games(int n, int[][] arr) {
         int r = 0;
         for (int i = 0; i < n; i++) {

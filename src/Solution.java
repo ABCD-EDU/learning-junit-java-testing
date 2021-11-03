@@ -6,7 +6,7 @@ import java.util.Set;
  * This class contains the compiled CodeForces solutions
  * team ABCD has created for CS311
  */
-public class CodeForces {
+public class Solution {
 
     /**
      * Main method of the class

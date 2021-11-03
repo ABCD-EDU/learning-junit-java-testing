@@ -5,7 +5,7 @@ import java.util.Set;
 public class CodeForces {
 
     public static void main(String args[]) {
-        System.out.println("CodeForces.java executed");
+        System.out.println("CodeForces.java ");
     }
 
     int games(int n, int[][] arr) {

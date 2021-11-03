@@ -12,7 +12,7 @@ public class Solution {
      * Main method of the class
      */
     public static void main(String args[]) {
-        System.out.println("CodeForces.java ");
+        System.out.println("CodeFoces.java ");
     }
 
     /**

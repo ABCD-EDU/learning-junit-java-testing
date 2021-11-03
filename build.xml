@@ -1,31 +1,44 @@
-<project default="main" name="Activity 45" basedir="."> 
+<project default="doc" name="Activity 45" basedir="."> 
+  <description>
+    A build file created by group ABCD for CS132 Activity 4 and 5.
+  </description>
 
-  <target name="main">
+  <!-- <property name="src" location="src"/>
+  <property name="build" location="build"/>
+  <property name="lib" location="lib"/> -->
 
-    <input message="Input name of Java file to be compiled" 
-            addproperty="file-name" />
+  <target name="init">
+    <input addproperty="file-name"
+      message="Input name of Java file to be compiled"/>
     <echo>File to be compiled: ${file-name}</echo>
-    
-    <javac srcdir="src" destdir="build" 
-      includeantruntime="false"
-    />
+  </target>
 
-    <!-- This  -->
-    <!-- <javac srcdir="src" destdir="build" 
-      includesfile="src/${file-name}" 
-      includeantruntime="false"
-      classpathref="lib"
-    /> -->
+  <target name="compile" depends="dir">
+    <javac srcdir="src" destdir="build" includeantruntime="false" includes="${file-name}"/>
+  </target>
 
-    <jar destfile="lib/jarfile"
-      basedir="build"
-      includes="build/${file-name}.class"
-    />
+  <target name="clean" depends="init">
+    <delete dir="lib"/>
+    <delete dir="build"/>
+    <delete dir="doc"/>
+  </target>
 
-    <javadoc sourcepath="src" 
-      destdir="doc" 
-      sourcefiles="src/${file-name}"/>
+  <target name="dir" depends="clean">
+    <mkdir dir="build"/>
+    <mkdir dir="lib"/>
+    <mkdir dir="doc"/>
+  </target>
 
+  <target name="doc" depends="jar">
+      <javadoc sourcepath="src" 
+        destdir="doc" 
+        sourcefiles="src/${file-name}" 
+        private="true"
+        verbose="false" />
+  </target>
+
+  <target name="jar" depends="compile">
+      <jar destfile="lib/jarfile" basedir="build" includes="build/${file-name}.class"/>
   </target>
 
 </project>

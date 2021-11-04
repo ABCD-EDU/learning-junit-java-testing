@@ -73,22 +73,6 @@ public class Solution {
     }
 
     /**
-     *
-     *
-     * @param wordCount
-     * @param word
-     * @return
-     */
-    String wayTooLongWords(int wordCount, String word) {
-        while (wordCount-->0) {
-            int wordLength = word.length();
-            if (wordLength > 10) return "" + word.charAt(0) + (wordLength-2) + word.charAt(wordLength-1);
-            else return word;
-        }
-        return null;
-    }
-
-    /**
      * This function is used to solve the Boy or Girl problem from Codeforces #146 (Div.2)
      *
      * This function takes a word input(user), determines if the user is a girl or not, and sends a prompt response

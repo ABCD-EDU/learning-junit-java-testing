@@ -35,8 +35,8 @@
   </target>
 
   <target name="compile" depends="dir">
-    <javac srcdir="src" destdir="build" includeantruntime="false" includes="${file-name}.java"/>
-    <javac srcdir="src" destdir="build" includeantruntime="false" >
+    <javac srcdir="src" destdir="build" debug="on" deprecation="off" encoding="cp1252" includeantruntime="false"  includes="${file-name}.java"/>
+    <javac srcdir="src" destdir="build"  debug="on" deprecation="off" encoding="cp1252" includeantruntime="false" >
       <classpath refid="classpath"/>
       <include name="${file-name}Test.java"/>
     </javac>
@@ -64,10 +64,10 @@
   </taskdef>
 
   <target name="test" depends="jar">
-    <jacoco:coverage destfile="coverage-reports/jacoco.exe" >
+    <jacoco:coverage destfile="coverage-reports/jacoco.exe"  xmlns:jacoco="antlib:org.jacoco.ant" exclclassloader="sun.reflect.DelegatingClassLoader:javassist.Loader" >
       <junit fork="true" forkmode="once" printsummary="on">
         <classpath refid="classpath" />
-        <formatter type="txt" />
+        <formatter type="xml" />
         <batchtest todir="junit-reports" fork="yes">
           <fileset dir="build">
             <include name="${file-name}Test*" />

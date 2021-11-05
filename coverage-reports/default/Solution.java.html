@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Solution.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Code Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Solution.java</span></div><h1>Solution.java</h1><pre class="source lang-java linenums">import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+/**
+ * This class contains the compiled CodeForces solutions
+ * team ABCD has created for CS311
+ */
+<span class="fc" id="L9">public class Solution {</span>
+
+    /**
+     * Main method of the class
+     */
+    public static void main(String args[]) {
+<span class="nc" id="L15">        System.out.println(&quot;CodeFoces.java &quot;);</span>
+<span class="nc" id="L16">    }</span>
+
+    /**
+     * This function is used to solve the Games Problem from Codeforces Round #164 (Div. 2)
+     * This will check how many games the host team from arr[i][0] is going to play the same
+     * uniform of the guest team arr[j][1].
+     *
+     * @param n number of iterations (home and guest team combination)
+     * @param arr team combinations
+     * @return number where host team plays in the same guest uniform
+     */
+    int games(int n, int[][] arr) {
+<span class="fc" id="L28">        int r = 0;</span>
+<span class="fc bfc" id="L29" title="All 2 branches covered.">        for (int i = 0; i &lt; n; i++) {</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">            for (int j = 0; j &lt; n; j++) {</span>
+<span class="pc bpc" id="L31" title="1 of 4 branches missed.">                if ((arr[i][0] == arr[j][1]) &amp;&amp; (j != i)) {</span>
+<span class="fc" id="L32">                    r++;</span>
+                }
+            }
+        }
+<span class="fc" id="L36">        return r;</span>
+    }
+
+    /**
+     * This function is used to solve the Colorful Stones Problem from Codeforces Round #162 (Div. 2)
+     * This will take a String of a and b where the string a are the stones and string b is the instructions.
+     *
+     * It will then calculate the final position based on the instructions given from String b.
+     *
+     * @param a stones to step on
+     * @param b instructions
+     * @return final position (1-based)
+     */
+    int colorfulStones(String a, String b){
+<span class="fc" id="L50">        int m=0;</span>
+<span class="fc" id="L51">        int current = 0;</span>
+<span class="fc bfc" id="L52" title="All 2 branches covered.">        for (int i = 0; i &lt; b.length(); i++) {</span>
+<span class="fc bfc" id="L53" title="All 2 branches covered.">            if (a.charAt(current) == b.charAt(i)){</span>
+<span class="fc" id="L54">                current++;</span>
+<span class="fc" id="L55">                m++;</span>
+            }
+        }
+<span class="fc" id="L58">        return m + 1;</span>
+    }
+
+    /**
+     * This function is used to solve the Way Too Long Words problem from Codeforces #65 (Div. 2)
+     *
+     * This function takes a word input and shortens it if the word is strictly more than 10 characters
+     *
+     * @param word a word input
+     * @return the shortened version of the inputted word
+     */
+    String wayTooLongWords(String word) {
+<span class="fc" id="L70">        int wordLength = word.length();</span>
+<span class="pc bpc" id="L71" title="1 of 2 branches missed.">        if (wordLength &gt; 10) return (&quot;&quot; + word.charAt(0) + (wordLength - 2) + word.charAt(wordLength - 1));</span>
+<span class="nc" id="L72">        else return (word);</span>
+    }
+
+    /**
+     * This function is used to solve the Boy or Girl problem from Codeforces #146 (Div.2)
+     *
+     * This function takes a word input(user), determines if the user is a girl or not, and sends a prompt response
+     *
+     * @param user the username
+     * @return the reponse to whether the entered username's uer is a girl or not
+     */
+    String boyOrGirl(String user) {
+<span class="fc" id="L84">        Set&lt;Character&gt; charSet = new HashSet&lt;&gt;();</span>
+<span class="fc bfc" id="L85" title="All 2 branches covered.">        for (int i = 0; i &lt; user.length(); i++) {</span>
+<span class="fc" id="L86">            charSet.add(user.charAt(i));</span>
+        }
+<span class="pc bpc" id="L88" title="1 of 2 branches missed.">        if (charSet.size() % 2 == 0) return &quot;CHAT WITH HER!&quot;;</span>
+<span class="nc" id="L89">        else return &quot;IGNORE HIM!&quot;;</span>
+    }
+
+    /**
+     * This function is used to solve the Team Problem from Codeforces Round #143 (Div. 2)
+     *
+     * @param size
+     * @param guess
+     * @return
+     */
+    int team(int size, int[][] guess) {
+<span class="fc" id="L100">        int g = 0;</span>
+<span class="fc bfc" id="L101" title="All 2 branches covered.">        for (int i = 0; i &lt; size; i++) {</span>
+<span class="fc" id="L102">            int x = guess[i][0], y = guess[i][1], z = guess[i][2];</span>
+<span class="fc bfc" id="L103" title="All 2 branches covered.">            if (x + y + z &gt;= 2)</span>
+<span class="fc" id="L104">                g++;</span>
+        }
+<span class="fc" id="L106">        return g;</span>
+    }
+
+    /**
+     * This function is used to solve the Buy a Shovel Problem Codeforces Round #377 (Div. 2)
+     *
+     * This function takes a price of a shovel. It determines how many coins do you need in order
+     * to buy the shovel without having any change.
+     *
+     * @param price price of the shovel
+     * @param extra denomination of the coin
+     * @return number of shovels you can buy without change
+     */
+    int buyAShovel(int price, int extra) {
+<span class="pc bpc" id="L120" title="1 of 2 branches missed.">        for (int i = 1; i &lt; 1000; i++) {</span>
+<span class="pc bpc" id="L121" title="1 of 4 branches missed.">            if (i*price % 10 == 0 || i*price % 10 - extra == 0 ){</span>
+<span class="fc" id="L122">                return i;</span>
+            }
+        }
+<span class="nc" id="L125">        return 0;</span>
+    }
+
+    /**
+     * This function is used to solve the Word Problem from Codeforces Beta Round #55 (Div. 2)
+     *
+     * This function converts a word by checking how many uppercase letters and lowercase letters are there
+     * in a string. If the uppercase letters count is more then the lowercase, then convert the string to uppercase.
+     * This works vice versa.
+     *
+     * @param s original string
+     * @param sl string converted to lowercase
+     * @param su string converted to uppercase
+     * @return converted string
+     */
+    String word(String s, String sl, String su) {
+<span class="fc" id="L141">        int l = 0;</span>
+<span class="fc bfc" id="L142" title="All 2 branches covered.">        for(int i=0;i&lt;s.length();i++)</span>
+        {
+<span class="fc bfc" id="L144" title="All 2 branches covered.">            if(s.toCharArray()[i]==sl.toCharArray()[i])</span>
+<span class="fc" id="L145">                l++;</span>
+        }
+<span class="fc" id="L147">        int u=0;</span>
+<span class="fc bfc" id="L148" title="All 2 branches covered.">        for(int i=0;i&lt;s.length();i++)</span>
+        {
+<span class="fc bfc" id="L150" title="All 2 branches covered.">            if(s.toCharArray()[i]==su.toCharArray()[i])</span>
+<span class="fc" id="L151">                u++;</span>
+        }
+<span class="pc bpc" id="L153" title="3 of 4 branches missed.">        if(l&gt;u || l==u)</span>
+<span class="fc" id="L154">            return s.toLowerCase();</span>
+        else
+<span class="nc" id="L156">            return s.toUpperCase();</span>
+    }
+
+    /**
+     * This function is used to solve the Football Problem from Codeforces Beta Round #77 (Div. 2 Only)
+     *
+     * This function determines if a certain situation in football is dangerous. It can be determined
+     * by checking if the string contains 1111111 or 0000000
+     *
+     * @param s situation to determine
+     * @return safe or no
+     */
+    String football(String s) {
+<span class="pc bpc" id="L169" title="2 of 4 branches missed.">        if(s.contains(&quot;1111111&quot;)||s.contains(&quot;0000000&quot;))</span>
+<span class="fc" id="L170">            return &quot;YES&quot;;</span>
+        else
+<span class="nc" id="L172">            return &quot;NO&quot;;</span>
+    }
+
+    /**
+     * This function is used to solve the Die Roll Problem from Codeforces Beta Round #9 (Div. 2 Only)
+     *
+     * @param a die roll 1
+     * @param b die roll 2
+     * @return probability that they will go to transylvania
+     */
+    String dieRoll(int a, int b) {
+<span class="fc" id="L183">        String[] ans = {&quot;0/1&quot;, &quot;1/6&quot;, &quot;1/3&quot;, &quot;1/2&quot;, &quot;2/3&quot;, &quot;5/6&quot;, &quot;1/1&quot;};</span>
+<span class="fc" id="L184">        return ans[7-Math.max(a,b)];</span>
+    }
+
+    int vanyaAndFence(int n, int max, List&lt;Integer&gt; array) {
+<span class="fc" id="L188">        int width = 0;</span>
+<span class="fc bfc" id="L189" title="All 2 branches covered.">        for (Integer num : array){</span>
+<span class="fc bfc" id="L190" title="All 2 branches covered.">            if (num &gt; max) {</span>
+<span class="fc" id="L191">                width += 2;</span>
+            } else {
+<span class="fc" id="L193">                width += 1;</span>
+            }
+<span class="fc" id="L195">        }</span>
+<span class="fc" id="L196">        return width;</span>
+    }
+
+    /**
+     * This function is used to solve the Anton and Danik Problem from Codeforces Round #379 (Div. 2)
+     *
+     * This function takes an input of an array integer in order to determine how much horseshoes of different color
+     * can you buy.
+     *
+     * @param arr an array of integer that consists of what color the horseshoe is
+     * @return number of unique color horseshoes you can buy (minimum)
+     */
+    int isYourHorseShoeOnTheOtherHoof(int[] arr) {
+<span class="fc" id="L209">        int r = 0;</span>
+<span class="fc" id="L210">        String s = &quot;&quot;;</span>
+<span class="fc bfc" id="L211" title="All 2 branches covered.">        for (int j : arr) {</span>
+<span class="fc bfc" id="L212" title="All 2 branches covered.">            if (!s.contains(String.valueOf(j)))</span>
+<span class="fc" id="L213">                s += j;</span>
+            else
+<span class="fc" id="L215">                r++;</span>
+        }
+<span class="fc" id="L217">        return r;</span>
+    }
+
+    /**
+     * This function is used to solve the Anton and Danik Problem from Codeforces Round #379 (Div. 2)
+     *
+     * This will determine who has won the most number of chess games.
+     *
+     * @param count number of games played
+     * @param outcome outcome of each game (example: ADAAAA where A=Antok, D=Danik)
+     * @return Danik if (D&gt;A), Anton if (A&gt;D), Friendship if (A==D)
+     */
+    String antonAndDanik(int count, String outcome) {
+<span class="fc" id="L230">        int danik = 0, anton = 0;</span>
+<span class="fc bfc" id="L231" title="All 2 branches covered.">        for (int i = 0; i &lt; count; i++) {</span>
+<span class="fc bfc" id="L232" title="All 2 branches covered.">            if (outcome.charAt(i) == 'D') {</span>
+<span class="fc" id="L233">                danik += 1;</span>
+<span class="pc bpc" id="L234" title="1 of 2 branches missed.">            } else if (outcome.charAt(i) == 'A') {</span>
+<span class="fc" id="L235">                anton += 1;</span>
+            }
+        }
+
+<span class="pc bpc" id="L239" title="1 of 2 branches missed.">        if (danik == anton)</span>
+<span class="nc" id="L240">            return &quot;Friendship&quot;;</span>
+        else
+<span class="pc bpc" id="L242" title="1 of 2 branches missed.">            return (danik &gt; anton) ? &quot;Danik&quot; : &quot;Anton&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="DESKTOP-H4MK2QS" name="SolutionTest" skipped="0" tests="12" time="0.109" timestamp="2021-11-05T13:59:35">
+  <properties>
+    <property name="sun.desktop" value="windows" />
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit" />
+    <property name="ant.library.dir" value="C:\apache-ant-1.10.11\lib" />
+    <property name="ant.file.type" value="file" />
+    <property name="java.specification.version" value="11" />
+    <property name="ant.project.name" value="Activity 45" />
+    <property name="sun.cpu.isalist" value="amd64" />
+    <property name="sun.jnu.encoding" value="Cp1252" />
+    <property name="java.class.path" value="E:\BSCS 3- 1ST SEM\APPLICATIONS DEVELOPMENT - 9433 - CS_311\CS311-activity-4-and-5\lib;E:\BSCS 3- 1ST SEM\APPLICATIONS DEVELOPMENT - 9433 - CS_311\CS311-activity-4-and-5\lib\hamcrest-core-1.3.jar;E:\BSCS 3- 1ST SEM\APPLICATIONS DEVELOPMENT - 9433 - CS_311\CS311-activity-4-and-5\lib\jacocoant.jar;E:\BSCS 3- 1ST SEM\APPLICATIONS DEVELOPMENT - 9433 - CS_311\CS311-activity-4-and-5\lib\junit-4.12.jar;E:\BSCS 3- 1ST SEM\APPLICATIONS DEVELOPMENT - 9433 - CS_311\CS311-activity-4-and-5\build;C:\apache-ant-1.10.11\lib\ant-launcher.jar;C:\apache-ant-1.10.11\lib\ant.jar;C:\apache-ant-1.10.11\lib\ant-junit.jar;C:\apache-ant-1.10.11\lib\ant-junit4.jar" />
+    <property name="java.vm.vendor" value="Oracle Corporation" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="user.variant" value="" />
+    <property name="java.vendor.url" value="https://openjdk.java.net/" />
+    <property name="user.timezone" value="" />
+    <property name="os.name" value="Windows 10" />
+    <property name="java.vm.specification.version" value="11" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="user.country" value="PH" />
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.9\bin" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner SolutionTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,E:\BSCS 3- 1ST SEM\APPLICATIONS DEVELOPMENT - 9433 - CS_311\CS311-activity-4-and-5\junit-reports\TEST-SolutionTest.xml crashfile=E:\BSCS 3- 1ST SEM\APPLICATIONS DEVELOPMENT - 9433 - CS_311\CS311-activity-4-and-5\junitvmwatcher16055987688458921700.properties propsfile=E:\BSCS 3- 1ST SEM\APPLICATIONS DEVELOPMENT - 9433 - CS_311\CS311-activity-4-and-5\junit10653741782339101585.properties" />
+    <property name="jdk.debug" value="release" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="user.home" value="C:\Users\Arian" />
+    <property name="user.language" value="en" />
+    <property name="sun.stderr.encoding" value="cp437" />
+    <property name="java.specification.vendor" value="Oracle Corporation" />
+    <property name="_jacoco.agentFile" value="C:\Users\Arian\AppData\Local\Temp\jacocoagent11078301192029991793.jar" />
+    <property name="java.version.date" value="2020-10-20" />
+    <property name="java.home" value="C:\Program Files\Java\jdk-11.0.9" />
+    <property name="file.separator" value="\" />
+    <property name="basedir" value="E:\BSCS 3- 1ST SEM\APPLICATIONS DEVELOPMENT - 9433 - CS_311\CS311-activity-4-and-5" />
+    <property name="java.vm.compressedOopsMode" value="Zero based" />
+    <property name="line.separator" value="&#xd;&#xa;" />
+    <property name="sun.stdout.encoding" value="cp437" />
+    <property name="ant.java.version" value="11" />
+    <property name="java.vm.specification.vendor" value="Oracle Corporation" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment" />
+    <property name="ant.file.type.Activity 45" value="file" />
+    <property name="user.script" value="" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="java.runtime.version" value="11.0.9+7-LTS" />
+    <property name="user.name" value="Arian" />
+    <property name="ant.file" value="E:\BSCS 3- 1ST SEM\APPLICATIONS DEVELOPMENT - 9433 - CS_311\CS311-activity-4-and-5\build.xml" />
+    <property name="path.separator" value=";" />
+    <property name="os.version" value="10.0" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="file.encoding" value="Cp1252" />
+    <property name="ant.project.invoked-targets" value="code-coverage" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="java.vendor.version" value="18.9" />
+    <property name="ant.core.lib" value="C:\apache-ant-1.10.11\lib\ant.jar" />
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/" />
+    <property name="java.io.tmpdir" value="C:\Users\Arian\AppData\Local\Temp\" />
+    <property name="java.version" value="11.0.9" />
+    <property name="user.dir" value="E:\BSCS 3- 1ST SEM\APPLICATIONS DEVELOPMENT - 9433 - CS_311\CS311-activity-4-and-5" />
+    <property name="os.arch" value="amd64" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob" />
+    <property name="ant.home" value="C:\apache-ant-1.10.11" />
+    <property name="sun.os.patch.level" value="" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.10.11 compiled on July 10 2021" />
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.9\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\anaconda3\condabin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.1\libnvvp;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\chocolatey\bin;C:\Python38;C:\Program Files\NVIDIA Corporation\Nsight Compute 2019.4.0\;C:\Program Files\OpenSSL-Win64\bin;C:\Users\Arian\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\nodejs\;C:\Program Files\dotnet\;C:\Program Files\Polyspace\R2021a\runtime\win64;C:\Program Files\Polyspace\R2021a\bin;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-11.0.9\bin;C:\Users\Arian\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\SlikSvn\bin;C:\Program Files\Java\jdk-11.0.9\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\Arian Carl Cayton\AppData\Local\Programs\Python\Python38\Scripts\;C:\Users\Arian Carl Cayton\AppData\Local\Programs\Python\Python38\;C:\Users\Arian Carl Cayton\AppData\Local\Microsoft\WindowsApps;C:\Users\Arian Carl Cayton\AppData\Local\Programs\Python\Python38;C:\Users\Arian Carl Cayton\AppData\Local\Programs\Python\Python38\Scripts;C:\Users\Arian Carl Cayton\AppData\Roaming\npm;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.1\bin;C:\Users\Arian Carl Cayton\AppData\Local\atom\bin;C:\Users\Arian Carl Cayton\AppData\Local\GitHubDesktop\bin;C:\Users\Arian\AppData\Local\atom\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2020.3.2\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.1\bin;C:\Users;C:\apache-ant-1.10.11\bin;." />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="java.vendor" value="Oracle Corporation" />
+    <property name="java.vm.version" value="11.0.9+7-LTS" />
+    <property name="ant.file.Activity 45" value="E:\BSCS 3- 1ST SEM\APPLICATIONS DEVELOPMENT - 9433 - CS_311\CS311-activity-4-and-5\build.xml" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="file-name" value="Solution" />
+    <property name="java.class.version" value="55.0" />
+    <property name="ant.project.default-target" value="code-coverage" />
+  </properties>
+  <testcase classname="SolutionTest" name="antonAndDanik" time="0.003" />
+  <testcase classname="SolutionTest" name="wayTooLongWords" time="0.008" />
+  <testcase classname="SolutionTest" name="colorfulStones" time="0.001" />
+  <testcase classname="SolutionTest" name="isYourHorseShoeOnTheOtherHoof" time="0.006" />
+  <testcase classname="SolutionTest" name="team" time="0.0" />
+  <testcase classname="SolutionTest" name="word" time="0.0" />
+  <testcase classname="SolutionTest" name="games" time="0.0" />
+  <testcase classname="SolutionTest" name="football" time="0.0" />
+  <testcase classname="SolutionTest" name="vanyaAndFence" time="0.0" />
+  <testcase classname="SolutionTest" name="boyOrGirl" time="0.0" />
+  <testcase classname="SolutionTest" name="dieRoll" time="0.0" />
+  <testcase classname="SolutionTest" name="buyAShovel" time="0.0" />
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SolutionTest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Code Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">SolutionTest.java</span></div><h1>SolutionTest.java</h1><pre class="source lang-java linenums">import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
+
+<span class="fc" id="L8">public class SolutionTest {</span>
+
+    @Test
+    public void games() {
+<span class="fc" id="L12">        Solution sol = new Solution();</span>
+
+<span class="fc" id="L14">        int size = 4;</span>
+<span class="fc" id="L15">        int[][] testArr = {</span>
+                {100, 42},
+                {42, 100},
+                {5, 42},
+                {100, 5}
+        };
+<span class="fc" id="L21">        int result = sol.games(size, testArr);</span>
+
+<span class="fc" id="L23">        assertEquals(&quot;RESULT DID NOT RETURN 5&quot;,5, result);</span>
+<span class="fc" id="L24">    }</span>
+
+    @Test
+    public void colorfulStones() {
+<span class="fc" id="L28">        Solution sol = new Solution();</span>
+
+<span class="fc" id="L30">        String stones = &quot;BRRBGBRGRBGRGRRGGBGBGBRGBRGRGGGRBRRRBRBBBGRRRGGBBB&quot;;</span>
+<span class="fc" id="L31">        String instructions = &quot;BBRBGGRGRGBBBRBGRBRBBBBRBRRRBGBBGBBRRBBGGRBRRBRGRB&quot;;</span>
+
+<span class="fc" id="L33">        int result = sol.colorfulStones(stones, instructions);</span>
+
+<span class="fc" id="L35">        assertEquals(&quot;RESULT DID NOT RETURN 15&quot;,15, result);</span>
+<span class="fc" id="L36">    }</span>
+
+    @Test
+    public void wayTooLongWords() {
+<span class="fc" id="L40">        Solution sol = new Solution();</span>
+
+<span class="fc" id="L42">        String word = &quot;pneumonoultramicroscopicsilicovolcanoconiosis&quot;;</span>
+<span class="fc" id="L43">        String result = sol.wayTooLongWords(word);</span>
+
+<span class="fc" id="L45">        assertEquals(&quot;RESULT DID NOT RETURN p43s&quot;,&quot;p43s&quot;, result);</span>
+<span class="fc" id="L46">    }</span>
+
+    @Test
+    public void boyOrGirl() {
+<span class="fc" id="L50">        Solution sol = new Solution();</span>
+
+<span class="fc" id="L52">        String input = &quot;wjmzbmr&quot;;</span>
+<span class="fc" id="L53">        String result = sol.boyOrGirl(input);</span>
+
+<span class="fc" id="L55">        assertEquals(&quot;RESULT DID NOT RETURN CHAT WITH HER&quot;,&quot;CHAT WITH HER!&quot;, result );</span>
+<span class="fc" id="L56">    }</span>
+
+    @Test
+    public void team() {
+<span class="fc" id="L60">        Solution sol = new Solution();</span>
+
+<span class="fc" id="L62">        int size = 3;</span>
+<span class="fc" id="L63">        int[][] testArr = {</span>
+                {1,1,1},
+                {1,1,0},
+                {0,1,0}
+        };
+
+<span class="fc" id="L69">        int result = sol.team(size, testArr);</span>
+
+<span class="fc" id="L71">        assertEquals(&quot;RESULT DID NOT RETURN 2&quot;,2, result);</span>
+<span class="fc" id="L72">    }</span>
+
+    @Test
+    public void buyAShovel() {
+<span class="fc" id="L76">        Solution sol = new Solution();</span>
+
+<span class="fc" id="L78">        int a = 117;</span>
+<span class="fc" id="L79">        int b = 3;</span>
+
+<span class="fc" id="L81">        int result = sol.buyAShovel(a,b);</span>
+
+<span class="fc" id="L83">        assertEquals(&quot;RESULT DID NOT RETURN 9&quot;,9, result);</span>
+<span class="fc" id="L84">    }</span>
+
+    @Test
+    public void word() {
+<span class="fc" id="L88">        Solution sol = new Solution();</span>
+
+<span class="fc" id="L90">        String s = &quot;HoUse&quot;;</span>
+<span class="fc" id="L91">        String sl = s.toLowerCase(Locale.ROOT);</span>
+<span class="fc" id="L92">        String su = s.toUpperCase(Locale.ROOT);</span>
+
+<span class="fc" id="L94">        String result = sol.word(s,sl,su);</span>
+
+<span class="fc" id="L96">        assertEquals(&quot;RESULT DID NOT RETURN house&quot;,&quot;house&quot;, result);</span>
+<span class="fc" id="L97">    }</span>
+
+    @Test
+    public void football() {
+<span class="fc" id="L101">        Solution sol = new Solution();</span>
+
+<span class="fc" id="L103">        String input = &quot;1000000001&quot;;</span>
+<span class="fc" id="L104">        String result = sol.football(input);</span>
+
+<span class="fc" id="L106">        assertEquals(&quot;RESULT DID NOT RETURN YES&quot;,&quot;YES&quot;, result);</span>
+<span class="fc" id="L107">    }</span>
+
+    @Test
+    public void dieRoll() {
+<span class="fc" id="L111">        Solution sol = new Solution();</span>
+
+<span class="fc" id="L113">        int a = 4;</span>
+<span class="fc" id="L114">        int b = 2;</span>
+
+<span class="fc" id="L116">        String result = sol.dieRoll(a,b);</span>
+
+<span class="fc" id="L118">        assertEquals(&quot;RESULT DID NOT RETURN 1/2&quot;,&quot;1/2&quot;, result);</span>
+<span class="fc" id="L119">    }</span>
+
+    @Test
+    public void vanyaAndFence() {
+<span class="fc" id="L123">        Solution sol = new Solution();</span>
+
+<span class="fc" id="L125">        int n = 3;</span>
+<span class="fc" id="L126">        int max = 7;</span>
+<span class="fc" id="L127">        List&lt;Integer&gt; testArr = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L128">        testArr.add(4);</span>
+<span class="fc" id="L129">        testArr.add(5);</span>
+<span class="fc" id="L130">        testArr.add(14);</span>
+
+<span class="fc" id="L132">        int result = sol.vanyaAndFence(n,max,testArr);</span>
+
+<span class="fc" id="L134">        assertEquals(&quot;RESULT DID NOT RETURN 4&quot;,4, result);</span>
+<span class="fc" id="L135">    }</span>
+
+    @Test
+    public void isYourHorseShoeOnTheOtherHoof() {
+<span class="fc" id="L139">        Solution sol = new Solution();</span>
+
+<span class="fc" id="L141">        int[] testArr = {1,7,3,3};</span>
+
+<span class="fc" id="L143">        int result = sol.isYourHorseShoeOnTheOtherHoof(testArr);</span>
+
+<span class="fc" id="L145">        assertEquals(&quot;RESULT DID NOT RETURN 1&quot;,1, result);</span>
+<span class="fc" id="L146">    }</span>
+
+    @Test
+    public void antonAndDanik() {
+<span class="fc" id="L150">        Solution sol = new Solution();</span>
+
+<span class="fc" id="L152">        int size = 6;</span>
+<span class="fc" id="L153">        String input = &quot;ADAAAA&quot;;</span>
+
+<span class="fc" id="L155">        String result = sol.antonAndDanik(size, input);</span>
+
+<span class="fc" id="L157">        assertEquals(&quot;RESULT DID NOT RETURN Anton&quot;,&quot;Anton&quot;, result);</span>
+<span class="fc" id="L158">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

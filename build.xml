@@ -67,7 +67,7 @@
     <jacoco:coverage destfile="coverage-reports/jacoco.exe" >
       <junit fork="true" forkmode="once" printsummary="on">
         <classpath refid="classpath" />
-        <formatter type="txt" />
+        <formatter type="plain" />
         <batchtest todir="junit-reports" fork="yes">
           <fileset dir="build">
             <include name="${file-name}Test*" />

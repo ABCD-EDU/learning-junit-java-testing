@@ -35,7 +35,6 @@
   </target>
 
   <target name="compile" depends="dir">
-
     <javac srcdir="src" destdir="build" includeantruntime="false" includes="${file-name}.java"/>
     <javac srcdir="src" destdir="build" includeantruntime="false" >
       <classpath refid="classpath"/>
@@ -55,7 +54,6 @@
     <jar destfile="lib/generated-jars/classes.jar" basedir="build">
       <include name="*.class"/>
     </jar>
-    <echo>Jar files generated</echo>
     <jar destfile="lib/generated-jars/docu.jar" basedir="doc"/>
   </target>
 
@@ -66,22 +64,20 @@
   </taskdef>
 
   <target name="test" depends="jar">
-    <jacoco:coverage destfile="coverage-reports/jacoco.exe" xmlns:jacoco="antlib:org.jacoco.ant" exclclassloader="sun.reflect.DelegatingClassLoader:javassist.Loader">
+    <jacoco:coverage destfile="coverage-reports/jacoco.exe" >
       <junit fork="true" forkmode="once" printsummary="on">
         <classpath refid="classpath" />
-        <formatter type="xml" />
+        <formatter type="txt" />
         <batchtest todir="junit-reports" fork="yes">
           <fileset dir="build">
-            <include name="*Test*" />
+            <include name="${file-name}Test*" />
           </fileset>
         </batchtest>
       </junit>
     </jacoco:coverage>
   </target>
 
-  <!-- Generate code coverage reports -->
   <target name="code-coverage" depends="test">
-    <echo>Hello World</echo>
     <jacoco:report>
       <executiondata>
         <file file="coverage-reports/jacoco.exe" />
@@ -97,8 +93,4 @@
       <html destdir="coverage-reports" />
     </jacoco:report>
   </target>
-
-
-
-
 </project>

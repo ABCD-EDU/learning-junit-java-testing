@@ -2,12 +2,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
-class SolutionTest {
+public class SolutionTest {
 
-    @org.junit.jupiter.api.Test
-    void games() {
+    @Test
+    public void games() {
         Solution sol = new Solution();
 
         int size = 4;
@@ -19,11 +20,11 @@ class SolutionTest {
         };
         int result = sol.games(size, testArr);
 
-        assertEquals(5, result, "RESULT DID NOT RETURN 5");
+        assertEquals("RESULT DID NOT RETURN 5",5, result);
     }
 
-    @org.junit.jupiter.api.Test
-    void colorfulStones() {
+    @Test
+    public void colorfulStones() {
         Solution sol = new Solution();
 
         String stones = "BRRBGBRGRBGRGRRGGBGBGBRGBRGRGGGRBRRRBRBBBGRRRGGBBB";
@@ -31,31 +32,31 @@ class SolutionTest {
 
         int result = sol.colorfulStones(stones, instructions);
 
-        assertEquals(15, result, "RESULT DID NOT RETURN 15");
+        assertEquals("RESULT DID NOT RETURN 15",15, result);
     }
 
-    @org.junit.jupiter.api.Test
-    void wayTooLongWords() {
+    @Test
+    public void wayTooLongWords() {
         Solution sol = new Solution();
 
         String word = "pneumonoultramicroscopicsilicovolcanoconiosis";
         String result = sol.wayTooLongWords(word);
 
-        assertEquals("p43s", result, "RESULT DID NOT RETURN p43s");
+        assertEquals("RESULT DID NOT RETURN p43s","p43s", result);
     }
 
-    @org.junit.jupiter.api.Test
-    void boyOrGirl() {
+    @Test
+    public void boyOrGirl() {
         Solution sol = new Solution();
 
         String input = "wjmzbmr";
         String result = sol.boyOrGirl(input);
 
-        assertEquals("CHAT WITH HER!", result, "RESULT DID NOT RETURN CHAT WITH HER");
+        assertEquals("RESULT DID NOT RETURN CHAT WITH HER","CHAT WITH HER!", result );
     }
 
-    @org.junit.jupiter.api.Test
-    void team() {
+    @Test
+    public void team() {
         Solution sol = new Solution();
 
         int size = 3;
@@ -67,11 +68,11 @@ class SolutionTest {
 
         int result = sol.team(size, testArr);
 
-        assertEquals(2, result, "RESULT DID NOT RETURN 2");
+        assertEquals("RESULT DID NOT RETURN 2",2, result);
     }
 
-    @org.junit.jupiter.api.Test
-    void buyAShovel() {
+    @Test
+    public void buyAShovel() {
         Solution sol = new Solution();
 
         int a = 117;
@@ -79,11 +80,11 @@ class SolutionTest {
 
         int result = sol.buyAShovel(a,b);
 
-        assertEquals(9, result, "RESULT DID NOT RETURN 9");
+        assertEquals("RESULT DID NOT RETURN 9",9, result);
     }
 
-    @org.junit.jupiter.api.Test
-    void word() {
+    @Test
+    public void word() {
         Solution sol = new Solution();
 
         String s = "HoUse";
@@ -92,21 +93,21 @@ class SolutionTest {
 
         String result = sol.word(s,sl,su);
 
-        assertEquals("house", result, "RESULT DID NOT RETURN house");
+        assertEquals("RESULT DID NOT RETURN house","house", result);
     }
 
-    @org.junit.jupiter.api.Test
-    void football() {
+    @Test
+    public void football() {
         Solution sol = new Solution();
 
         String input = "1000000001";
         String result = sol.football(input);
 
-        assertEquals("YES", result, "RESULT DID NOT RETURN YES");
+        assertEquals("RESULT DID NOT RETURN YES","YES", result);
     }
 
-    @org.junit.jupiter.api.Test
-    void dieRoll() {
+    @Test
+    public void dieRoll() {
         Solution sol = new Solution();
 
         int a = 4;
@@ -114,11 +115,11 @@ class SolutionTest {
 
         String result = sol.dieRoll(a,b);
 
-        assertEquals("1/2", result, "RESULT DID NOT RETURN 1/2");
+        assertEquals("RESULT DID NOT RETURN 1/2","1/2", result);
     }
 
-    @org.junit.jupiter.api.Test
-    void vanyaAndFence() {
+    @Test
+    public void vanyaAndFence() {
         Solution sol = new Solution();
 
         int n = 3;
@@ -130,22 +131,22 @@ class SolutionTest {
 
         int result = sol.vanyaAndFence(n,max,testArr);
 
-        assertEquals(4, result, "RESULT DID NOT RETURN 4");
+        assertEquals("RESULT DID NOT RETURN 4",4, result);
     }
 
-    @org.junit.jupiter.api.Test
-    void isYourHorseShoeOnTheOtherHoof() {
+    @Test
+    public void isYourHorseShoeOnTheOtherHoof() {
         Solution sol = new Solution();
 
         int[] testArr = {1,7,3,3};
 
         int result = sol.isYourHorseShoeOnTheOtherHoof(testArr);
 
-        assertEquals(1, result, "RESULT DID NOT RETURN 1");
+        assertEquals("RESULT DID NOT RETURN 1",1, result);
     }
 
-    @org.junit.jupiter.api.Test
-    void antonAndDanik() {
+    @Test
+    public void antonAndDanik() {
         Solution sol = new Solution();
 
         int size = 6;
@@ -153,6 +154,6 @@ class SolutionTest {
 
         String result = sol.antonAndDanik(size, input);
 
-        assertEquals("Anton", result, "RESULT DID NOT RETURN Anton");
+        assertEquals("RESULT DID NOT RETURN Anton","Anton", result);
     }
 }

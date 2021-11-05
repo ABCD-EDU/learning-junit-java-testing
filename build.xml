@@ -1,44 +1,104 @@
-<project default="doc" name="Activity 45" basedir="."> 
+<project default="code-coverage" name="Activity 45" basedir="." xmlns:jacoco="antlib:org.jacoco.ant">
   <description>
     A build file created by group ABCD for CS132 Activity 4 and 5.
   </description>
 
-  <!-- <property name="src" location="src"/>
-  <property name="build" location="build"/>
-  <property name="lib" location="lib"/> -->
+
+  <path id="classpath">
+    <path location="lib">
+      <fileset dir="lib" includes="*.jar"/>
+    </path>
+    <path location="build"/>
+  </path>
 
   <target name="init">
     <input addproperty="file-name"
-      message="Input name of Java file to be compiled"/>
+           message="Input name of Java file to be compiled. NOTE: If file is 'Solution.java' then the input must be 'Solution' | Example Input: Solution"/>
     <echo>File to be compiled: ${file-name}</echo>
   </target>
 
-  <target name="compile" depends="dir">
-    <javac srcdir="src" destdir="build" includeantruntime="false" includes="${file-name}"/>
-  </target>
 
   <target name="clean" depends="init">
-    <delete dir="lib"/>
+    <delete dir="lib/generated-jars"/>
     <delete dir="build"/>
     <delete dir="doc"/>
+    <delete dir="junit-reports"/>
+    <delete dir="coverage-reports"/>
   </target>
 
   <target name="dir" depends="clean">
     <mkdir dir="build"/>
-    <mkdir dir="lib"/>
+    <mkdir dir="lib/generated-jars"/>
     <mkdir dir="doc"/>
+    <mkdir dir="junit-reports"/>
+    <mkdir dir="coverage-reports"/>
   </target>
 
-  <target name="doc" depends="jar">
-      <javadoc sourcepath="src" 
-        destdir="doc" 
-        sourcefiles="src/${file-name}" 
-        private="true"
-        verbose="false" />
+  <target name="compile" depends="dir">
+
+    <javac srcdir="src" destdir="build" includeantruntime="false" includes="${file-name}.java"/>
+    <javac srcdir="src" destdir="build" includeantruntime="false" >
+      <classpath refid="classpath"/>
+      <include name="${file-name}Test.java"/>
+    </javac>
   </target>
 
-  <target name="jar" depends="compile">
-      <jar destfile="lib/jarfile" basedir="build" includes="build/${file-name}.class"/>
+  <target name="doc" depends="compile">
+    <javadoc sourcepath="src"
+             destdir="doc"
+             sourcefiles="src/${file-name}.java"
+             private="true"
+             verbose="false" />
   </target>
+
+  <target name="jar" depends="doc">
+    <jar destfile="lib/generated-jars/classes.jar" basedir="build">
+      <include name="*.class"/>
+    </jar>
+    <echo>Jar files generated</echo>
+    <jar destfile="lib/generated-jars/docu.jar" basedir="doc"/>
+  </target>
+
+
+
+  <taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+    <classpath path="./lib/jacocoant.jar" />
+  </taskdef>
+
+  <target name="test" depends="jar">
+    <jacoco:coverage destfile="coverage-reports/jacoco.exe" xmlns:jacoco="antlib:org.jacoco.ant" exclclassloader="sun.reflect.DelegatingClassLoader:javassist.Loader">
+      <junit fork="true" forkmode="once" printsummary="on">
+        <classpath refid="classpath" />
+        <formatter type="xml" />
+        <batchtest todir="junit-reports" fork="yes">
+          <fileset dir="build">
+            <include name="*Test*" />
+          </fileset>
+        </batchtest>
+      </junit>
+    </jacoco:coverage>
+  </target>
+
+  <!-- Generate code coverage reports -->
+  <target name="code-coverage" depends="test">
+    <echo>Hello World</echo>
+    <jacoco:report>
+      <executiondata>
+        <file file="coverage-reports/jacoco.exe" />
+      </executiondata>
+      <structure name="Code Coverage Report">
+        <classfiles>
+          <fileset dir="build" />
+        </classfiles>
+        <sourcefiles encoding="UTF-8">
+          <fileset dir="src" />
+        </sourcefiles>
+      </structure>
+      <html destdir="coverage-reports" />
+    </jacoco:report>
+  </target>
+
+
+
 
 </project>

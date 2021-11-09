@@ -1,3 +1,6 @@
+
+
+<!--##Use JDK version 11.0.9, since it is the JDK version that is compatible with the JUnit and Jacoco versions used in this project-->
 <project default="code-coverage" name="Activity 45" basedir="." xmlns:jacoco="antlib:org.jacoco.ant">
   <description>
     A build file created by group ABCD for CS132 Activity 4 and 5.
@@ -19,19 +22,13 @@
 
 
   <target name="clean" depends="init">
-    <delete dir="lib/generated-jars"/>
     <delete dir="build"/>
     <delete dir="doc"/>
-    <delete dir="junit-reports"/>
-    <delete dir="coverage-reports"/>
   </target>
 
   <target name="dir" depends="clean">
     <mkdir dir="build"/>
-    <mkdir dir="lib/generated-jars"/>
     <mkdir dir="doc"/>
-    <mkdir dir="junit-reports"/>
-    <mkdir dir="coverage-reports"/>
   </target>
 
   <target name="compile" depends="dir">
@@ -51,21 +48,26 @@
   </target>
 
   <target name="jar" depends="doc">
-    <jar destfile="lib/generated-jars/classes.jar" basedir="build">
+    <jar destfile="build/classes.jar" basedir="build">
       <include name="*.class"/>
     </jar>
-    <jar destfile="lib/generated-jars/docu.jar" basedir="doc"/>
+    <jar destfile="build/docu.jar" basedir="doc"/>
   </target>
 
 
-
+<!--  <taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">-->
   <taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
     <classpath path="./lib/jacocoant.jar" />
   </taskdef>
 
   <target name="test" depends="jar">
-    <jacoco:coverage destfile="coverage-reports/jacoco.exe"  xmlns:jacoco="antlib:org.jacoco.ant" exclclassloader="sun.reflect.DelegatingClassLoader:javassist.Loader" >
-      <junit fork="true" forkmode="once" printsummary="on">
+    <delete dir="junit-reports"/>
+    <mkdir dir="junit-reports"/>
+<!--    <mkdir dir="junit-reports/html"/>-->
+    <jacoco:coverage destfile="build/jacoco.exe"
+                     xmlns:jacoco="antlib:org.jacoco.ant"
+                     exclclassloader="sun.reflect.DelegatingClassLoader:javassist.Loader" >
+      <junit fork="true" forkmode="once" >
         <classpath refid="classpath" />
         <formatter type="xml" />
         <batchtest todir="junit-reports" fork="yes">
@@ -75,12 +77,20 @@
         </batchtest>
       </junit>
     </jacoco:coverage>
+    <junitreport todir="./junit-reports">
+      <fileset dir="./junit-reports">
+        <include name="TEST-*.xml"/>
+      </fileset>
+      <report format="noframes" todir="./junit-reports" />
+    </junitreport>
   </target>
 
   <target name="code-coverage" depends="test">
+    <delete dir="coverage-reports"/>
+    <mkdir dir="coverage-reports"/>
     <jacoco:report>
       <executiondata>
-        <file file="coverage-reports/jacoco.exe" />
+        <file file="build/jacoco.exe" />
       </executiondata>
       <structure name="Code Coverage Report">
         <classfiles>

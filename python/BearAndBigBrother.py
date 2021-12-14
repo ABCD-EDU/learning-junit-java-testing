@@ -1,3 +1,5 @@
+# this function solves the bear and big brother problem from codeforces
+# it takes two parameters a and b corresponding to their ages
 def solve(a, b):
     _w = 0
     while True:

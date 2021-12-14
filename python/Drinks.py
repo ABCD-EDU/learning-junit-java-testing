@@ -15,6 +15,7 @@ def main():
             exit()
 
 
+# this function prints out a menu where the user can choose the method to run
 def show_menu():
     print("== ABCD-A ACT 6 DOCKER PYTHON APPLICATION MENU ==")
     print("1. Boy or girl")
@@ -87,14 +88,7 @@ def func3():
             print(word[length - 1])
         else:
             print(word)
-
-# n_drinks = int(input())
-# proportions = input().split(' ')
-# total = 0
-# for proportion in proportions:
-#     total += int(proportion)
-# print(Decimal(total/n_drinks))
-
+            
 if __name__ == "__main__":
     main()
 
